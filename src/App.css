@@ -1,0 +1,32 @@
+@import "~antd/dist/antd.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.ant-layout {
+  height: 100vh;
+}
+
+.ant-layout-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ant-layout-footer {
+  text-align: center;
+}
+
+.ant-typography {
+  text-align: center;
+}
+
+.ant-form-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
