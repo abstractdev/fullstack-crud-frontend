@@ -1,11 +1,14 @@
 import { Button, Form, Input } from "antd";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import apiPaths from "../apiPaths";
+import { setIsLoggedin } from "../features/userSlice";
 
 function LoginForm() {
   const navigate = useNavigate();
   const [form] = Form.useForm();
   const paths = apiPaths();
+  const dispatch = useDispatch();
 
   async function handleFormSubmit(values) {
     const res = await fetch(paths.userLoginPost, {
@@ -16,6 +19,7 @@ function LoginForm() {
     });
     const resData = await res.json();
     if ("200" in resData) {
+      dispatch(setIsLoggedin());
       navigate("/dashboard");
     }
   }
